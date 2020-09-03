@@ -44,43 +44,66 @@ const useStyles = theme => ({
 
 
  class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      windowWidth: 0,
+      windowHeight: 0
+    };
 
+    this.updateDimensions = this.updateDimensions.bind(this);
+  }
+  
 
  
 
   componentDidMount(){
 
+    this.updateDimensions();
+    window.addEventListener("resize", this.updateDimensions);
+     
     $("#one").click(function() {
       $('html,body').animate({
           scrollTop: $("#1st").offset().top},
           'slow');
-  });
+   });
 
   $("#zero").click(function() {
     $('html,body').animate({
         scrollTop: '0px'},
         'slow');
-});
+  });
 
-$("#two").click(function() {
+  $("#two").click(function() {
   $('html,body').animate({
       scrollTop: $("#2nd").offset().top},
       'slow');
-});
+  });
 
-$("#three").click(function() {
+  $("#three").click(function() {
   $('html,body').animate({
       scrollTop: $("#3rd").offset().top},
       'slow');
-});
+  });
   
-$("#four").click(function() {
+   $("#four").click(function() {
   $('html,body').animate({
       scrollTop: $("#4th").offset().top},
       'slow');
-});
+   });
   
 
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("resize", this.updateDimensions);
+  }
+
+  updateDimensions() {
+    let windowWidth = typeof window !== "undefined" ? window.innerWidth : 0;
+    let windowHeight = typeof window !== "undefined" ? window.innerHeight : 0;
+
+    this.setState({ windowWidth, windowHeight });
   }
   
   render() {
