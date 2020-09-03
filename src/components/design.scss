@@ -1,0 +1,277 @@
+$skin: #F0BEAF;
+$grey: #424B54;
+$pink: #F6828C;
+@mixin border($b) {
+  border-radius: $b;
+  -webkit-border-radius: $b;
+  -moz-border-radius: $b;
+}
+
+.container,
+.face,
+.hair,
+.nose,
+.ear,
+.neck,
+.body,
+.cape,
+.logo,
+.group,
+.fringe,
+.eye,
+.profile-card,
+.yes,
+.no,
+.info,
+.tongue,
+.profile-wrap,
+.name,
+.mouth,
+.eyebrow, .blush {
+  position: absolute;
+  
+}
+
+body {
+  background: #ECE9E6;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #FFFFFF, #ECE9E6);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #FFFFFF, #ECE9E6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  
+}
+
+.container {
+  position: absolute;
+  margin: auto;
+  right: 0;
+  left: 0;
+  width: 200px;
+  height: 200px;
+}
+
+.profile {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  @include border(100%);
+  border: 2px solid #FFF;
+  overflow: hidden;
+  background: #E8E9EB;
+}
+
+.group {
+  left: -7px;
+}
+
+.face {
+  @include border(100px);
+  z-index: 20;
+  top: 50px;
+  left: 70px;
+  width: 80px;
+  height: 100px;
+  background: #F0BEAF;
+}
+
+.hair {
+  z-index: 3;
+  top: 30px;
+  left: 50px;
+  width: 120px;
+  height: 200px;
+  border-radius: 100px 100px 0 0;
+  background: $grey;
+  &:before,
+  &:after {
+    position: absolute;
+    content: '';
+  }
+  &:before {
+ 
+  }
+}
+
+.ear {
+  z-index: 4;
+  top: 86px;
+  left: 61px;
+  width: 30px;
+  height: 30px;
+  @include border(100%);
+  background: $skin;
+  display: none;
+  &:before {
+    position: absolute;
+    top: 5px;
+    left: 4px;
+    content: '';
+    width: 20px;
+    height: 20px;
+    @include border(100%);
+    background: #ED8A80;
+  }
+}
+
+.ear.right {
+  left: 130px;
+}
+
+.fringe {
+  z-index: 99;
+  top: 53px;
+  left: 95px;
+  width: 69px;
+  height: 35px;
+  background: $grey;
+  border-radius: 0 0 100px 100px;
+  transform: rotate(30deg);
+  &:before {
+    position: absolute;
+    content: '';
+    top: 5px;
+    left: -24px;
+    width: 57px;
+    height: 50px;
+    background: #424B54;
+    @include border(100%);
+    transform: rotate(10deg);
+  }
+}
+
+.eyebrow {
+  z-index: 300;
+  top: 95px;
+  left: 78px;
+  width: 12px;
+  height: 2px;
+  background: #646B73;
+  @include border(3px);
+  &:before {
+    position: absolute;
+    content: '';
+    left: 50px;
+    width: 12px;
+    height: 2px;
+    background: #646B73;
+    @include border(3px);
+  }
+}
+
+.eye {
+  z-index: 30;
+  top: 100px;
+  left: 80px;
+  width: 10px;
+  height: 10px;
+  background: $grey;
+  @include border(100%);
+  &:before {
+    position: absolute;
+    content: '';
+    left: 50px;
+    width: 10px;
+    height: 10px;
+    background: #424B54;
+    @include border(100%);
+  }
+}
+
+
+.blush {
+  z-index: 999;
+  top: 116px;
+  left: 77px;
+  width: 10px;
+  height: 7px;
+  background: #E3879E;
+  @include border(100%);
+  opacity: 0.4;
+  &:before{
+    position: absolute;
+    content: '';
+    left: 58px;
+    width: 10px;
+  height: 7px;
+  background: #E3879E;
+  @include border(100%);
+    
+  }
+}
+
+.nose {
+  z-index: 20;
+  top: 100px;
+  left: 107px;
+  width: 8px;
+  height: 14px;
+  background: #DB9B99;
+  @include border(100px);
+}
+
+.mouth {
+  z-index: 20;
+  top: 120px;
+  left: 97px;
+  width: 30px;
+  height: 15px;
+  border-radius: 0 0 100px 100px;
+  background: #424B54;
+  overflow: hidden;
+}
+
+.tongue {
+  top: 5px;
+  left: 8px;
+  width: 30px;
+  height: 20px;
+  background: $pink;
+  @include border(100%);
+}
+
+.neck {
+  z-index: 13;
+  width: 30px;
+  height: 30px;
+  background: $skin;
+  top: 130px;
+  left: 97px;
+  @include border(100%);
+}
+
+.body {
+  z-index: 10;
+  top: 150px;
+  left: 60px;
+  width: 100px;
+  height: 150px;
+  background: #E3879E;
+  @include border(100px);
+}
+
+.cape {
+  z-index: 4;
+  top: 148px;
+  left: 43px;
+  width: 130px;
+  height: 160px;
+  background: #E15554;
+  border-radius: 60px 60px 0 0;
+}
+
+.logo {
+  top: 10px;
+  left: 16px;
+  width: 27px;
+  height: 15px;
+  border-bottom: 20px solid #ECD688;
+  border-left: 23px solid transparent;
+  border-right: 22px solid transparent;
+  &:before {
+    position: absolute;
+    content: '';
+    top: 35px;
+    left: -22px;
+    border-top: 40px solid #ECD688;
+    border-left: 35px solid transparent;
+    border-right: 35px solid transparent;
+  }
+}
