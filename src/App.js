@@ -12,6 +12,7 @@ import $ from "jquery";
 import ArticlesGrid from './components/ArticlesGrid';
 import About from './components/About';
 
+
 const useStyles = theme => ({
   coloring: {
     backgroundColor: "#8fd5db",
@@ -135,7 +136,10 @@ const useStyles = theme => ({
      </AppBar>
    </div>
    <div id="0th" style={{}}>
-   <Home/>
+     
+     <Home/>
+    
+   
    </div>
    <div id="4th">
      <About />

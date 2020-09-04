@@ -1,7 +1,7 @@
 import React from 'react';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
-
+import { Animated } from "react-animated-css";
 
 
 export default function Home() {
@@ -33,10 +33,12 @@ const useStyles = makeStyles((theme) => ({
         <div>
           
         <div   className={classes.sectionbro} >
+        <Animated isVisible={true} animationIn="animate__bounceIn">
             <Typography className={classes.home}>
                 Pravallika Kambhampati
                 <br/>
             </Typography>
+          </Animated>  
             <div style={{fontFamily: "Pacifico", fontSize: "47px"}}>
                 budding web developer
                 </div>
